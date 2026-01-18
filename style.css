@@ -1,0 +1,127 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+    height: 100vh;
+    background: radial-gradient(circle at top, #ff9a9e, #fad0c4);
+    overflow: hidden;
+    color: #fff;
+}
+
+/* Main Layout */
+.container {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    padding: 40px;
+}
+
+h1 {
+    font-size: 3rem;
+    margin: 20px 0;
+}
+
+/* Card */
+.card {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(8px);
+    padding: 25px;
+    margin: 20px auto;
+    border-radius: 20px;
+    width: 90%;
+    max-width: 500px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+.card h2 {
+    margin-bottom: 10px;
+    color: #ffe6ea;
+}
+
+.card p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+/* Button */
+button {
+    margin-top: 15px;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 30px;
+    background: #ff4d6d;
+    color: white;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+button:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 20px #ff4d6d;
+}
+
+/* Response */
+#response {
+    margin-top: 20px;
+    font-size: 1.5rem;
+    color: #fff0f3;
+}
+
+/* 3D Heart */
+.heart-3d {
+    width: 100px;
+    height: 100px;
+    margin: 0 auto;
+    background: red;
+    position: relative;
+    transform: rotate(-45deg);
+    animation: pulse 2s infinite;
+}
+
+.heart-3d::before,
+.heart-3d::after {
+    content: "";
+    width: 100px;
+    height: 100px;
+    background: red;
+    border-radius: 50%;
+    position: absolute;
+}
+
+.heart-3d::before {
+    top: -50px;
+    left: 0;
+}
+
+.heart-3d::after {
+    left: 50px;
+    top: 0;
+}
+
+/* Pulse Animation */
+@keyframes pulse {
+    0% { transform: rotate(-45deg) scale(1); }
+    50% { transform: rotate(-45deg) scale(1.1); }
+    100% { transform: rotate(-45deg) scale(1); }
+}
+
+/* Floating Hearts */
+.hearts::before {
+    content: "❤️ 💕 💖 💗 💓 💞";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    animation: float 10s linear infinite;
+    font-size: 2rem;
+    opacity: 0.4;
+}
+
+@keyframes float {
+    from { transform: translateY(100%); }
+    to { transform: translateY(-100%); }
+}
